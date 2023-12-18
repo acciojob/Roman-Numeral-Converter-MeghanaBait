@@ -11,20 +11,22 @@ function convertToRoman(num) {
 
   //your code here
 
-	let ans = '';
+let ans = '';
 
-	for(let key in obj) {
-		const [roman,value] = obj[key];
+  for (let key in obj) {
+    const [roman, value] = obj[key];
 
-		const count = Math.floor(num/value);
+    const count = Math.floor(num / value);
 
-		ans += roman.repeat(count);
+    ans += roman.repeat(count);
 
-		num %= value;
-	}
-	result = result.replace('IIII', 'IV');
+    num %= value;
+  }
 
-	return ans;
+  // Handle special cases like IV, IX, XL, XC, CD, and CM
+  ans = ans.replace('IIII', 'IV').replace('VIV', 'IX').replace('XXXX', 'XL').replace('LXL', 'XC').replace('CCCC', 'CD').replace('DCD', 'CM');
+
+  return ans;
 	
 
 }
