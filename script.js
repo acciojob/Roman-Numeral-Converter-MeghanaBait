@@ -22,7 +22,7 @@ function convertToRoman(num) {
 
 		num %= value;
 	}
-	result = result.replace('IIII', 'IV').replace('VIV', 'IX').replace('XXXX', 'XL').replace('LXL', 'XC');
+	result = result.replace('IIII', 'IV');
 
 	return ans;
 	
