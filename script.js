@@ -11,6 +11,21 @@ function convertToRoman(num) {
 
   //your code here
 
+	let ans = '';
+
+	for(let key in obj) {
+		const [roman,value] = obj[key];
+
+		const count = Math.floor(num/value);
+
+		ans += roman.repeat(count);
+
+		num %= value;
+	}
+
+	return ans;
+	
+
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
